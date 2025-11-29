@@ -1,15 +1,29 @@
-# Configuration for Nightwalker News Aggregator
-output_dir: reports
-ri_depth: 16
-model: gpt-5.1
+openai:
+  api_key: "ENV"          # read from env var instead of hardcoding
+  model: "gpt-5.1"        # or whatever GPT-5 variant you use
+
 sources:
   reuters:
     enabled: true
+    rss_urls:
+      - "https://feeds.reuters.com/reuters/topNews"
   bbc:
     enabled: true
+    rss_urls:
+      - "http://feeds.bbci.co.uk/news/rss.xml"
   npr:
     enabled: true
+    rss_urls:
+      - "https://feeds.npr.org/1001/rss.xml"
   guardian:
     enabled: true
+    rss_urls:
+      - "https://www.theguardian.com/world/rss"
   aljazeera:
     enabled: true
+    rss_urls:
+      - "https://www.aljazeera.com/xml/rss/all.xml"
+
+output:
+  reports_dir: "reports"
+  max_articles_per_source: 10
