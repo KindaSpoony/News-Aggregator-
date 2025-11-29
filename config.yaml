@@ -1,0 +1,15 @@
+# Configuration for Nightwalker News Aggregator
+output_dir: reports
+ri_depth: 16
+model: gpt-5.1
+sources:
+  reuters:
+    enabled: true
+  bbc:
+    enabled: true
+  npr:
+    enabled: true
+  guardian:
+    enabled: true
+  aljazeera:
+    enabled: true
